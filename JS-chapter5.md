@@ -42,39 +42,20 @@
     : 변수를 선언할 때 데이터 타입을 미리 지정하지 않고, 할당된 값에 따라 동적으로 변수의 타입이 결정된다.
 
   ### * 데이터 타입
-  : 프로그래밍 언어에서 사용할 수 있는 값의 종류<br>
-  - 종류<br>
-    * 원시 타입(Primitive data type)<br>
-    1) <Strong>number</Strong><br>
-      : 숫자를 나타내는 데이터 타입
-        ```
-        var num1 = 1001;
-        var num2 = 10.50;
-        ```<br>
-    2) <Strong>string</Strong><br>
-      : 문자열을 나타내는 데이터 타입
-        ```
-        var string1 = 'Hello';
-        var string2 = "World";
-        ```<br>
-    3) <Strong>boolean</Strong><br>
-      : 참 혹은 거짓을 나타내는 데이터 타입 <br>
-        ```
-        var bool1 = true;
-        var bool2 = false;
-        ```<br>
-    4) <Strong>null</Strong><br>
-      : 아무것도 참조하고 있지 않음을 명시할 때의 데이터 타입이자 값. <br>
-        ```
-        var foo = null;
-        ```<br>
-    5) <Strong>undefined</Strong><br>
-      : 선언은 되었지만 값이 할당되진 않았을 때의 데이터 타입이자 값. <br>
-        ```
-        var bar;
-        ```<br><br>
-    * 객체 타입(Object data type)<br>
-      --> 바로 아래 객체 파트에서 설명<br><br>
+  : 프로그래밍 언어에서 사용할 수 있는 데이터의 종류<br>
+    
+    - 원시 타입 (primitive data type)
+      * boolean
+      * null
+      * undefined
+      * number
+      * string
+      * symbol (ES6에서 추가)
+      
+    - 객체 타입 (object/reference type)
+      * object
+    
+  - 자세한 내용은 https://github.com/mina-gwak/javascript-study/edit/main/JS-chapter6.md 에서 이어짐.
       
 # 2.객체 
 : 데이터를 의미하는 프로퍼티(property)와 데이터를 참조하고 조작할 수 있는 동작(behavior)을 의미하는 메소드(method)로 구성된 집합
