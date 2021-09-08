@@ -25,7 +25,8 @@
   - <Strong>재활용성</Strong><br>
   - <Strong>가독성 향상</Strong><br>
   - <Strong>사람이 이해할 수 있는 언어로 지정한 식별자</Strong>
-  - <Strong>선언은 var와 할당은 =</Strong>
+  - <Strong>선언은 var</Strong>
+  - <Strong>할당은 =</Strong>
   - <Strong>동적 타이핑</Strong><br>
 
   ### * 데이터 타입
