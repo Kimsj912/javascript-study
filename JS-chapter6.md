@@ -263,3 +263,50 @@
   ```
 
 - <Strong>변수 호이스팅(Variable Hoisting)</Strong>
+: var 선언문이나 function 선언문 등 <b>모든 선언문이 해당 Scope의 선두로 옮겨진 것처럼 동작하는 특성</b>을 말한다.
+-> <Strong>쉽게 말하면, var는 어디서 선언하든 undefined 데이터 타입을 가진 채 해당 스코프의 선두로 동작한다.</Strong>  
+
+  - 변수의 생성단계
+    1. 선언 단계(Declaration phase)<br>
+      : 변수 객체(Variable Object)에 변수를 등록한다. 이 변수 객체는 스코프가 참조하는 대상이 된다.<br>
+      
+    2. 초기화 단계(Initialization phase)<br>
+      : 변수 객체(Variable Object)에 등록된 변수를 메모리에 할당한다. 이 단계에서 변수는 undefined로 초기화된다.
+        - var 키워드로 선언된 변수는 선언 단계와 초기화 단계가 한번에 이루어진다. 
+        - 다시 말해 스코프 체인이 가리키는 변수 객체에 변수가 등록되고 변수는 undefined로 초기화된다. -> 변수 선언문 이전에 변수에 접근하여도 Variable Object에 변수가 존재하기 때문에 에러가 발생하지 않는다. <br>
+      
+    3. 할당 단계(Assignment phase)<br>
+      : undefined로 초기화된 변수에 실제값을 할당한다.<br>
+  
+  - 예시
+  ```
+  console.log(foo); 
+  var foo = 123;
+  console.log(foo); 
+  {
+    var foo = 456;
+  }
+  console.log(foo); 
+  ```
+  위와 같은 코드가 있을 때, 실제로 실행되는 순서는 아래와 같다
+  ```
+  var foo; // 가장 먼저 undefined 값을 가진 채 선언된다.
+  console.log(foo); // 출력 : undefined
+  foo = 123; // foo에 값 123이 할당된다.
+  console.log(foo); // 출력 : 123
+  {
+    foo = 456; // foo는 함수 레벨 스코프로 선언되었기 때문에 값만 456으로 재할당된다.
+  }
+  console.log(foo); // 출력 : 456
+  ```
+  - 블록 레벨 스코프 vs. 함수 레벨 스코프
+  여기서 함수레벨 스코프와 블록레벨 스코프의 개념이 등장한다. 자바스크립트는 C나 java와 달리 블록 레벨이 아닌 함수 레벨의 스코프를 갖는다. (단, let, const를 이용하면 블록레벨 스코프를 사용할 수 있다.)
+    - <b>블록 레벨 스코프(Block level Scope)</b><br>
+    : 코드 블록 내에서 선언된 변수는 <b>코드 블록 내에서만 유효</b>하며 코드 블록 외부에서는 참조할 수 없다.<br><br>
+    - <b>함수 레벨 스코프(function-level Scope)</b><br>
+    : 함수 내에서 선언된 변수는 <b>함수 내에서만 유효</b>하며 함수 외부에서는 참조할 수 없다<br>
+    => 이러한 점 때문에 위의 예시에서 {}(블록)속에서 var foo=456;이 있었지만, "함수 레벨로 범위 사용 + 함수 맨앞에서 모든 변수가 먼저 선언됨"으로 인해 지역변수가 생성되지 않은 것이다.<br><br>
+    * 잠시 지나가는 let과 const의 스코프 <br>
+      : { } 사이의 var foo=456이 let이나 const일 경우 지역 변수로 {} 안에서만 사용될 수 있다. (둘의 차이점은 재할당여부와 선언&할당의 동시 수행 필요성 정도)
+      
+  
