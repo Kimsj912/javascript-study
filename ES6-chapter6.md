@@ -114,14 +114,14 @@
   - ES6
     - 프로퍼티 이름(키)을 기준으로 객체의 디스트럭처링이 이뤄지고 값이 할당된다.
     - 순서는 의미가 없다
-    ```
-    const obj = { firstName: 'Ungmo', lastName: 'Lee' };
+      ```
+      const obj = { firstName: 'Ungmo', lastName: 'Lee' };
 
-    // 변수 lastName, firstName가 선언 -> obj(initializer(초기화자))가 Destructuring(비구조화, 파괴)되어 할당
-    const { lastName, firstName } = obj;
+      // 변수 lastName, firstName가 선언 -> obj(initializer(초기화자))가 Destructuring(비구조화, 파괴)되어 할당
+      const { lastName, firstName } = obj;
 
-    console.log(firstName, lastName); // Ungmo Lee
-    ```
+      console.log(firstName, lastName); // Ungmo Lee
+      ```
     - default value 설정
       - 객체의 프로퍼티 prop1과 prop2를 디스트럭처링한다. 
       - 다음과 같은 방법으로 prop3의 디펄트 값을 'c'로 할당한다.
@@ -163,5 +163,13 @@
       const { address: { city } } = person;
       console.log(city); // 'Seoul'
       ```
+      
+
+# 마무리 정리
+  - 디스트럭처링(Destructuring) = 배열이나 객체를 파괴하여 변수에 할당하는 것.
+  - 배열의 디스트럭처링
+    `var 변수명 = 배열[인덱스]; ...(n까지 반복) ` -> `const {변수명1, 변수명2, ... 변수명n} = 배열;`
+  - 객체의 디스트럭처링
+    `var 변수명 = 객체명.프로퍼티이름; ... (n개의 프로퍼티이름을 모두 적어 반복)` -> `const {변수명1, 변수명2, ... 변수명n} = {변수명1:프로퍼티값1, 변수명2:프로퍼티값2, ... 변수명n:프로퍼티값n};
 
 // Ref Link : https://poiemaweb.com/es6-destructuring
