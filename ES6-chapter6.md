@@ -1,3 +1,4 @@
+# 디스트럭처링
 # Contents
   1. 디스트럭처링 (Destructuring)
   2. 배열 디스트럭처링 (Array Destructuring)
